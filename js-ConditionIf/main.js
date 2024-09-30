@@ -16,27 +16,16 @@ if (a > 0) {
     document.write(n + "khong chia het cho ca 3 & 5")
  }
  document.write("<br>" + "************<br>")
- // Nhập vào tháng từ người dùng
-var month = parseInt(prompt("Nhập vào tháng (1-12):"));
+ var month = parseInt(prompt("Nhập vào tháng (1-12):"));
 
-// Kiểm tra số ngày của tháng
-switch (month) {
-    case 1:
-    case 3:
-    case 5:
-    case 7:
-    case 8:
-    case 10:
-    case 12:
+if (month < 1 || month > 12) {
+    document.write("Tháng không hợp lệ! Vui lòng nhập số từ 1 đến 12.");
+} else {
+    if (month === 1 || month === 3 || month === 5 || month === 7 || month === 8 || month === 10 || month === 12) {
         document.write("Tháng " + month + " có 31 ngày.");
-        break;
-    case 4:
-    case 6:
-    case 9:
-    case 11:
+    } else if (month === 4 || month === 6 || month === 9 || month === 11) {
         document.write("Tháng " + month + " có 30 ngày.");
-        break;
-    case 2:
+    } else if (month === 2) {
         // Yêu cầu nhập năm để kiểm tra năm nhuận
         var year = parseInt(prompt("Nhập vào năm:"));
         if ((year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0)) {
@@ -44,9 +33,7 @@ switch (month) {
         } else {
             document.write("Tháng 2 của năm " + year + " có 28 ngày.");
         }
-        break;
-    default:
-        document.write("Tháng không hợp lệ! Vui lòng nhập số từ 1 đến 12.");
+    }
 }
 document.write("<br>" + "************<br>")
 // Nhập hệ số a, b, c từ người dùng
